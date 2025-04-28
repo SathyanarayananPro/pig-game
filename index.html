@@ -10,6 +10,56 @@
   </head>
   <body>
     <main>
+      <p id="openModal" class="btn-1">🎯Rules</p>
+      <!--Hidden Modal-->
+      <div id="myModal" class="modal">
+        <div class="modal-content">
+          <button class="close-btn" id="closeModal">&times;</button>
+
+          <h1 style="text-align: center; font-size: 25px">How to Play ?</h1>
+
+          <h2>🎲 Roll the Dice:</h2>
+          <ul>
+            <li>On your turn, click the <strong>Roll</strong> button.</li>
+            <li>The dice shows a number from 1 to 6.</li>
+          </ul>
+
+          <h2 style="margin-top: 10px">➡️ Add to Your Turn Score:</h2>
+          <ul>
+            <li>
+              If you roll 2, 3, 4, 5, or 6, the number is added to your
+              <strong>current score</strong>.
+            </li>
+            <li>You can keep rolling to increase your score.</li>
+          </ul>
+
+          <h2 style="margin-top: 10px">⚡ But Beware!</h2>
+          <ul>
+            <li>
+              If you roll a 1, you <strong>lose all points</strong> collected in
+              your turn, and your turn ends immediately!
+            </li>
+          </ul>
+
+          <h2 style="margin-top: 10px">✋ Hold Your Score:</h2>
+          <ul>
+            <li>
+              If you click the <strong>Hold</strong> button, your
+              <strong>current turn score</strong> is added to your
+              <strong>total score</strong>, and your turn ends.
+            </li>
+            <li>Now it's the next player's turn.</li>
+          </ul>
+
+          <h2 style="margin-top: 10px">🏆 Winning the Game:</h2>
+          <ul>
+            <li>
+              The first player to reach or exceed
+              <strong>100 points</strong> wins!
+            </li>
+          </ul>
+        </div>
+      </div>
       <section class="player player--0 player--active">
         <h2 class="name" id="name--0">Player 1</h2>
         <p class="score" id="score--0">43</p>
@@ -28,9 +78,10 @@
       </section>
 
       <img src="dice-5.png" alt="Playing dice" class="dice" />
+
       <button class="btn btn--new">🔄 New game</button>
       <button class="btn btn--roll">🎲 Roll dice</button>
-      <button class="btn btn--hold">📥 Hold</button>
+      <button class="btn btn--hold">✋ Hold</button>
     </main>
     <script src="script.js"></script>
   </body>

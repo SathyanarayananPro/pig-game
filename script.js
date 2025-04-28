@@ -10,6 +10,35 @@ const diceEl = document.querySelector('.dice');
 const rollEl = document.querySelector('.btn--roll');
 const holdEl = document.querySelector('.btn--hold');
 const newEl = document.querySelector('.btn--new');
+
+const openBtn = document.getElementById('openModal');
+const closeBtn = document.getElementById('closeModal');
+const modal = document.getElementById('myModal');
+// 1. Preload all dice images
+const diceImages = [];
+
+for (let i = 1; i <= 6; i++) {
+  const img = new Image();
+  img.src = `dice-${i}.png`; // replace with your path if different
+  diceImages.push(img);
+}
+// Open Modal
+openBtn.onclick = function () {
+  modal.style.display = 'flex';
+};
+
+// Close Modal
+closeBtn.onclick = function () {
+  modal.style.display = 'none';
+};
+
+// Close if user clicks outside modal content
+window.onclick = function (event) {
+  if (event.target === modal) {
+    modal.style.display = 'none';
+  }
+};
+
 // Starting Condition
 let scores = [0, 0];
 let currentScore = 0;
@@ -57,6 +86,7 @@ rollEl.addEventListener('click', function () {
     // display dice number
     diceEl.hidden = false;
     diceEl.src = `dice-${dice}.png`;
+
     // check for 1
     if (dice !== 1) {
       // add current score
