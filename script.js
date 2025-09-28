@@ -39,6 +39,13 @@ window.onclick = function (event) {
   }
 };
 
+window.addEventListener('keypress', function (e) {
+  if (e.key === 'r' || e.key === 'R') {
+    roll();
+  } else if (e.key === 'h' || e.key === 'H') {
+    hold();
+  }
+});
 // Starting Condition
 let scores = [0, 0];
 let currentScore = 0;
@@ -78,7 +85,7 @@ const switchplayer = function () {
   player1El.classList.toggle('player--active');
 };
 // Rolling dice function
-rollEl.addEventListener('click', function () {
+const roll = function () {
   if (playing) {
     // generate random dice number
     const dice = Math.trunc(Math.random() * 6) + 1;
@@ -100,9 +107,9 @@ rollEl.addEventListener('click', function () {
       switchplayer();
     }
   }
-});
-
-holdEl.addEventListener('click', function () {
+};
+rollEl.addEventListener('click', roll);
+const hold = function () {
   if (playing) {
     // add current score to active player score
     scores[activePlayer] += currentScore;
@@ -129,4 +136,5 @@ holdEl.addEventListener('click', function () {
       switchplayer();
     }
   }
-});
+};
+holdEl.addEventListener('click', hold);
