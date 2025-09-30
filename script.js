@@ -86,6 +86,9 @@ const switchplayer = function () {
 };
 // Rolling dice function
 const roll = function () {
+  rollEl.classList.add('active');
+  setTimeout(() => rollEl.classList.remove('active'), 100);
+
   if (playing) {
     // generate random dice number
     const dice = Math.trunc(Math.random() * 6) + 1;
@@ -108,8 +111,12 @@ const roll = function () {
     }
   }
 };
+
 rollEl.addEventListener('click', roll);
 const hold = function () {
+  holdEl.classList.add('active');
+  setTimeout(() => holdEl.classList.remove('active'), 100);
+
   if (playing) {
     // add current score to active player score
     scores[activePlayer] += currentScore;

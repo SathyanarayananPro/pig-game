@@ -171,7 +171,8 @@ h2 {
 .btn--hold {
   top: 46.1rem;
 }
-
+.btn--roll.active,
+.btn--hold.active,
 .btn:active {
   transform: translate(-50%, 3px);
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
